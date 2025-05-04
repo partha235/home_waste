@@ -1,0 +1,14 @@
+# for checking esp32 TTP223B touch sensor analog read
+
+from machine import ADC, Pin
+import time
+
+# Initialize ADC on pin 15 
+adc = ADC(Pin(15))
+adc.atten(ADC.ATTN_11DB)    # Full range: 0 to ~3.3V
+adc.width(ADC.WIDTH_12BIT)  # Resolution: 0 to 4095
+
+while True:
+    analog_value = adc.read()
+    print("Analog Value:", analog_value)
+    time.sleep(1)

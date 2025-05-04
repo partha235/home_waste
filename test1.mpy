@@ -1,0 +1,10 @@
+# for checking esp32 TTP223B touch sensor digital Read
+
+from machine import Pin
+from utime import sleep_ms
+
+x=Pin(15,Pin.IN)
+
+while True:
+    print(x.value())
+    sleep_ms(200)

@@ -1,0 +1,13 @@
+# for checking inbuilt touch function of esp32
+
+from machine import TouchPad, Pin
+import time
+
+# declaring pin with touch capability 
+touch_pin = TouchPad(Pin(27, mode=Pin.IN))
+
+while True:
+    #reading touch sensitivity 
+    touch_value = touch_pin.read()
+    print(touch_value)
+    time.sleep_ms(500)
