@@ -1,0 +1,21 @@
+# program to check servo-360 
+from machine import Pin, PWM
+import time
+
+# Connect servo signal wire to GPIO 14 (use any PWM-capable pin)
+servo = PWM(Pin(15), freq=50)
+
+def stop_servo():
+    # Neutral duty cycle (servo stops)
+    servo.duty(77)  # ~1.5 ms pulse width (adjust as needed)
+
+
+def rotate_clockwise():
+    # Higher pulse width => clockwise rotation
+    servo.duty(100)  # ~2 ms
+
+for i in range(100):
+    rotate_clockwise()
+    time.sleep(0.05)  
+    stop_servo()
+    time.sleep(1)
