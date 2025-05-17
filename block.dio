@@ -1,54 +1,41 @@
 <mxfile host="65bd71144e">
     <diagram id="J4oVlwKDm63a8Ce80B0O" name="Page-1">
-        <mxGraphModel dx="320" dy="494" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="754" dy="565" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="2" value="&lt;font style=&quot;font-size: 19px;&quot;&gt;ESP32&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="240" y="100" width="70" height="200" as="geometry"/>
-                </mxCell>
-                <mxCell id="4" value="" style="edgeStyle=none;html=1;fontSize=19;entryX=0;entryY=0.25;entryDx=0;entryDy=0;strokeWidth=4;" parent="1" source="3" target="2" edge="1">
+                <mxCell id="19" value="" style="edgeStyle=none;html=1;shape=flexArrow;fillColor=default;" edge="1" parent="1" source="15" target="18">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="3" value="IR Sensor" style="rounded=1;whiteSpace=wrap;html=1;fontSize=19;" parent="1" vertex="1">
-                    <mxGeometry x="30" y="100" width="120" height="60" as="geometry"/>
+                <mxCell id="15" value="Power Supply" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="70" y="60" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="7" value="" style="edgeStyle=none;html=1;strokeWidth=4;fontSize=19;" parent="1" source="5" target="2" edge="1">
+                <mxCell id="23" value="" style="edgeStyle=none;shape=flexArrow;html=1;fillColor=default;" edge="1" parent="1" source="18" target="22">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="5" value="&lt;h1 style=&quot;&quot; class=&quot;product_title entry-title wd-entities-title&quot;&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;&lt;font style=&quot;font-size: 26px;&quot;&gt;SN04-N&lt;/font&gt;&lt;span style=&quot;font-size: 37px;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;/h1&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=19;" parent="1" vertex="1">
-                    <mxGeometry x="30" y="180" width="120" height="60" as="geometry"/>
+                <mxCell id="18" value="ESP32" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="60" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="10" value="" style="edgeStyle=none;html=1;strokeWidth=4;fontSize=19;" parent="1" source="9" target="2" edge="1">
-                    <mxGeometry relative="1" as="geometry">
-                        <Array as="points">
-                            <mxPoint x="310" y="150"/>
-                        </Array>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="9" value="Servo motor" style="rounded=0;whiteSpace=wrap;html=1;fontSize=19;" parent="1" vertex="1">
-                    <mxGeometry x="390" y="100" width="120" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="12" value="" style="edgeStyle=none;html=1;strokeWidth=4;fontSize=19;" parent="1" source="11" target="2" edge="1">
+                <mxCell id="21" value="" style="edgeStyle=none;shape=flexArrow;html=1;fillColor=default;" edge="1" parent="1" source="20" target="18">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="11" value="Buzzer" style="rounded=0;whiteSpace=wrap;html=1;fontSize=19;" parent="1" vertex="1">
-                    <mxGeometry x="390" y="190" width="120" height="60" as="geometry"/>
+                <mxCell id="20" value="HC-SR04" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="90" y="170" width="120" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="14" value="" style="edgeStyle=none;html=1;fontSize=26;strokeColor=none;strokeWidth=12;fillColor=#FFFFFF;endArrow=classic;endFill=1;" edge="1" parent="1" target="2">
-                    <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="150" y="261" as="sourcePoint"/>
-                    </mxGeometry>
+                <mxCell id="22" value="Servo" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+                    <mxGeometry x="425" y="50" width="80" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="13" value="HC-SR04" style="rounded=1;whiteSpace=wrap;html=1;fontSize=19;" vertex="1" parent="1">
-                    <mxGeometry x="30" y="260" width="120" height="60" as="geometry"/>
+                <mxCell id="25" value="" style="edgeStyle=none;shape=flexArrow;html=1;fillColor=default;" edge="1" parent="1" source="24" target="18">
+                    <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="15" value="" style="edgeStyle=none;html=1;strokeWidth=4;fontSize=19;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=-0.029;entryY=0.715;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="13" target="2">
-                    <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="160" y="216.75675675675677" as="sourcePoint"/>
-                        <mxPoint x="220" y="250" as="targetPoint"/>
-                        <Array as="points"/>
-                    </mxGeometry>
+                <mxCell id="24" value="Capacitive Pad" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="180" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" style="edgeStyle=none;shape=flexArrow;html=1;entryX=0.936;entryY=1.002;entryDx=0;entryDy=0;entryPerimeter=0;fillColor=default;" edge="1" parent="1" source="26" target="18">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="IR Sensor" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="385" y="180" width="120" height="60" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
