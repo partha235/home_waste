@@ -15,7 +15,7 @@ def set_angle(angle):
 # Example usage:
 while True:
     print("Moving to 160°")
-    set_angle(140)
+    set_angle(160)
     time.sleep(5)
 
     print("Moving to 90°")
