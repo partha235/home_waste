@@ -3,7 +3,8 @@ from machine import Pin, PWM
 import time
 
 # Connect servo signal wire to GPIO 14 (use any PWM-capable pin)
-servo = PWM(Pin(15), freq=50)
+# servo = PWM(Pin(15), freq=50) # lid servo
+servo = PWM(Pin(26), freq=50) # sens servo
 
 def stop_servo():
     # Neutral duty cycle (servo stops)

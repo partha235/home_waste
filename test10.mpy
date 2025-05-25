@@ -1,0 +1,29 @@
+# Final program - fin-1
+from machine import Pin, time_pulse_us, PWM
+from utime import sleep_ms,sleep
+
+# Define ultrasonic pins (not used here yet)
+trigger = Pin(13, Pin.OUT)
+echo = Pin(12, Pin.IN)
+
+# Inductive metal sensor (digital input)
+m_se = Pin(25, Pin.IN)
+
+# IR sensor for presence detection
+i_sen = Pin(33, Pin.IN)
+
+# Capacitive touch input (digital read)
+t_sen = Pin(27, Pin.IN)
+
+while True:
+    print("Metal sensor:", m_se.value())
+    print("IR sensor:", i_sen.value())
+    print("Touch sensor:", t_sen.value())
+    sleep_ms(200)
+
+    if not i_sen.value() and not m_se.value():
+        print("Metal object detected")
+    elif not i_sen.value() and t_sen.value():
+        print("Biodegradable object detected")
+    
+    sleep(2)

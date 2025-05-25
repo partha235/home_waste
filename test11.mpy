@@ -1,0 +1,78 @@
+from machine import Pin, time_pulse_us, PWM
+from utime import sleep, sleep_ms
+import time
+
+# Ultrasonic sensor pins
+trigger = Pin(13, Pin.OUT)
+echo = Pin(12, Pin.IN)
+
+# Sensors
+m_se = Pin(25, Pin.IN)   # Metal sensor
+i_sen = Pin(33, Pin.IN)  # IR sensor
+t_sen = Pin(27, Pin.IN)  # Touch pad (digital input)
+
+# Servo motors
+lid_servo = PWM(Pin(5), freq=50)       # Main lid servo
+comp_servo = PWM(Pin(14), freq=50)     # Compartment selector
+sensor_servo = PWM(Pin(26), freq=50)   # Sensor mover servo
+
+# Function to set angle for a given servo
+def set_angle(servo, angle):
+    min_duty = 26   # ~0.5ms
+    max_duty = 128  # ~2.5ms
+    duty = int(min_duty + (angle / 180) * (max_duty - min_duty))
+    servo.duty(duty)
+
+# Ultrasonic distance measurement
+def get_distance():
+    trigger.off()
+    time.sleep_us(2)
+    trigger.on()
+    time.sleep_us(10)
+    trigger.off()
+    duration = time_pulse_us(echo, 1, 30000)
+    distance_cm = (duration / 2) / 29.1
+    return distance_cm
+
+# Main loop
+while True:
+    dist = get_distance()
+    print("Distance: {:.2f} cm".format(dist))
+    set_angle(sensor_servo, 90)
+
+    if dist <= 10:
+        print("Human detected")
+        set_angle(lid_servo, 160)  # Open bin
+
+        # Sort object based on sensor readings
+        if not i_sen.value() and not m_se.value():
+            print("Metal object detected")
+            set_angle(comp_servo, 0)
+            sleep_ms(500)
+            set_angle(sensor_servo, 50)
+
+        elif not i_sen.value() and t_sen.value():
+            print("Biodegradable object detected")
+            set_angle(comp_servo, 120)
+            sleep_ms(500)
+            set_angle(sensor_servo, 50)
+
+        elif not i_sen.value() and m_se.value() and not t_sen.value():
+            print("Plastic object detected")
+            set_angle(comp_servo, 180)
+            sleep_ms(500)
+            set_angle(sensor_servo, 50)
+
+        else:
+            print("Unknown object or no object")
+            set_angle(comp_servo, 90)
+
+        time.sleep(2)  # Hold open for 2 seconds
+        # print("Closing bin...")
+        # set_angle(lid_servo, 90)  # Close lid
+
+    else:
+        print("No person nearby - bin remains closed")
+        set_angle(lid_servo, 90)
+
+    time.sleep(1)  # Short delay before next check
